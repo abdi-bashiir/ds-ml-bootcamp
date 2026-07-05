@@ -138,6 +138,17 @@ df[scale_cols] = scaler.fit_transform(
     df[scale_cols]
 )
 
+# ### Chosen Scaler
+
+# I chose **RobustScaler** from `sklearn.preprocessing` because it is less sensitive to outliers than `StandardScaler`. Loan datasets often contain extreme values, especially in features such as **Income** and **LoanAmount**. RobustScaler scales the data using the **median** and the **interquartile range (IQR)** instead of the mean and standard deviation, making it a better choice for this dataset.
+
+# Only the numeric features were scaled. The label-encoded columns (`Approved`, `HasCollateral`, and `PreviousDefaults`) were not scaled because they are binary categorical variables, not continuous numeric features.
+
+# Some values may appear as **0.00 after scaling**, which is expected behavior. This happens when a value is equal or very close to the **median** of that feature, so after applying RobustScaler it becomes 0.00. This is not an error or missing data.
+
+# **Source:** Scikit-learn Documentation – RobustScaler: https://scikit-learn.org/stable/modules/generated/sklearn.preprocessing.RobustScaler.html
+
+
 # print(df[scale_cols].head(10))      # Ka dib scaling
 
 print("\n=== After HEAD ===")
