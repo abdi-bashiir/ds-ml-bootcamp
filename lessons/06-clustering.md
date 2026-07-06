@@ -9,8 +9,8 @@
 By the end of this lesson, students will be able to:
 
 - Explain what **Unsupervised Learning** is and when to use it instead of supervised learning.
-- Describe **K-Means**, **Hierarchical Clustering**, and **DBSCAN** for grouping data.
-- Evaluate clustering with the **Elbow Method**, **Silhouette Score**, and **Davies–Bouldin Index**.
+- Describe **K-Means** and how it groups data around cluster centroids.
+- Choose *k* with the **Elbow Method** and evaluate results with **Silhouette Score** and **Davies–Bouldin Index**.
 - Segment wholesale clients by **spending behavior** using a single end-to-end Python script.
 
 ---
@@ -51,9 +51,7 @@ The business question: *Which types of buyers do we have, based on what they pur
 
 ---
 
-## Clustering Algorithms
-
-### K-Means Clustering
+## K-Means Clustering
 
 - **Idea:** Partition data into *k* clusters around **centroids** (cluster centers).
 - **Steps:**
@@ -67,30 +65,7 @@ The business question: *Which types of buyers do we have, based on what they pur
 - **Best for:** Spherical clusters, numeric features, medium-to-large datasets.
 - **Limitation:** Must choose *k* beforehand; sensitive to outliers and scale.
 
-> Our coding session uses **K-Means** on six scaled spending columns.
-
-### Hierarchical Clustering
-
-- **Idea:** Build a **tree of clusters** (dendrogram) by repeatedly merging (or splitting) groups.
-- **Best for:** Seeing relationships at multiple levels; smaller datasets.
-- **Limitation:** Slow on large data; sensitive to noise.
-
-### DBSCAN
-
-- **Idea:** Group **dense** regions; mark sparse points as **noise/outliers**.
-- **Best for:** Irregular cluster shapes; outlier detection.
-- **Limitation:** Hard to tune; struggles when cluster density varies a lot.
-
-#### Algorithm Comparison
-
-| Feature | K-Means | Hierarchical | DBSCAN |
-| --- | --- | --- | --- |
-| Needs k upfront | Yes | No (cut tree) | No |
-| Handles noise | Poor | Moderate | Yes (noise label) |
-| Speed | Fast | Slower | Moderate |
-| Best for | Round clusters, large n | Small n, dendrograms | Irregular shapes |
-
-> Clustering algorithms are **not limited** to these three — GMM, Mean-Shift, and Spectral Clustering are also widely used.
+> Our coding session uses **K-Means** on six scaled spending columns. Other clustering methods (Hierarchical, DBSCAN, and more) are covered in **Assignment 6** — you will research and implement one additional algorithm there.
 
 ---
 
@@ -161,12 +136,12 @@ python code/customer-segmentation.py
 ## Summary
 
 - **Clustering:** Unsupervised learning — no labels; the algorithm discovers groups. Our project segments **wholesale clients by spending behavior**.
-- **K-Means:** Partitions data into *k* clusters around centroids — fast baseline for numeric data.
-- **Hierarchical / DBSCAN:** Alternative methods for trees of clusters or density-based groups (theory; Assignment 6 extension).
+- **K-Means:** Partitions data into *k* clusters around centroids — the method we use in class for this project.
+- **Metrics:** Elbow (choose *k*), Silhouette (separation), Davies–Bouldin (between-cluster similarity).
 - **Features:** Six annual spend columns only; **Channel** and **Region** excluded from clustering.
 - **Pipeline:** IQR cap → StandardScaler → Elbow → K-Means → Silhouette + Davies–Bouldin → interpret cluster centers.
 - **Coding session:** Run [`customer-segmentation.py`](../code/customer-segmentation.py).
-- **Assignment 6:** Notebook reproduction + one additional clustering algorithm.
+- **Assignment 6:** Theory on other clustering algorithms + notebook reproduction + one additional method of your choice.
 
 ---
 
