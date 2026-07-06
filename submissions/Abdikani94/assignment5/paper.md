@@ -53,7 +53,7 @@ For loan approval:
 
 ## 5. Real-World Case Study
 
-A 2025 study built a machine learning pipeline to predict loan defaults, comparing Gradient Boosting, Random Forest, XGBoost, and LightGBM. <cite index="5-1">The pipeline covered preprocessing, class-imbalance handling (SMOTE), training, tuning, and evaluation with accuracy, F1, ROC AUC, and confusion matrices.</cite> <cite index="5-1">Gradient Boosting won, at about 88.9% accuracy and F1 around 0.81.</cite>
+A 2025 study built a machine learning pipeline to predict loan defaults, comparing Gradient Boosting, Random Forest, XGBoost, and LightGBM. The pipeline covered preprocessing, class-imbalance handling with SMOTE, training, tuning, and evaluation using accuracy, F1, ROC AUC, and confusion matrices. Gradient Boosting performed best, at about 88.9% accuracy and an F1 score around 0.81.
 
 Same idea as this assignment: real finance data, same metrics, tree-based models. Lesson: ensembles usually beat single models, and imbalance needs direct handling, not just accuracy.
 
