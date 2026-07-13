@@ -28,7 +28,7 @@ This project is a regression problem because it predicts a continuous numerical 
 
 - **Dataset Name:** Appliances Energy Prediction
 - **Source:** UCI Machine Learning Repository
-- **Dataset Link:** https://archive.ics.uci.edu/dataset/380/appliances+energy+prediction
+- **Dataset Link:** [https://archive.ics.uci.edu/dataset/380/appliances+energy+prediction](https://www.kaggle.com/datasets/sohommajumder21/appliances-energy-prediction-data-set)
 - **Expected Size:** 19,735 rows
 - **Target Column:** `Appliances` (Energy consumption in Watt-hours)
 **Main Features:**
